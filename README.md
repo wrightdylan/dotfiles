@@ -15,12 +15,14 @@
 
 <details>
     <summary>Features</summary>
+
     - Tidy, fancy prompt with useful details of the current directory, and shows SSH status (when active)
     - Automatic wallpaper changer
     - Nice lock screen (can use current background selected by wallpaper changer)
 </details>
 <details>
     <summary>Requirements</summary>
+
     - Hyprland
         - hypridle
         - hyprlock
