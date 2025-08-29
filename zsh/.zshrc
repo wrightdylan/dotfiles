@@ -1,4 +1,5 @@
 eval "$(starship init zsh)"
+eval "$(mise activate)"
 
 # ZSH neat feaatures
 autoload -U compinit; compinit

@@ -1,18 +1,15 @@
-@import "mocha.css"; 
+@import "mocha.css";
 
 * {
-    font-family: "MesloLGS Nerd Font Mono Bold";
+    font-family: "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
     font-size: 16px;
-    min-height: 0;
-    font-weight: bold;
 }
 
 window#waybar {
-    background: transparent;
-    background-color: @crust;
-    color: @overlay0;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 13px;
     transition-property: background-color;
-    transition-duration: 0.1s;
+    transition-duration: 0.5s;
 }
 
 #window {
@@ -22,6 +19,9 @@ window#waybar {
 }
 
 button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
     border: none;
     border-radius: 0;
 }
@@ -29,71 +29,78 @@ button {
 button:hover {
     background: inherit;
     color: @mauve;
-    border-top: 2px solid @mauve;
 }
 
 #workspaces button {
-    padding: 0 4px;
-}
-
-#workspaces button.focused {
-    color: @rosewater;
+    padding: 0 5px;
+    background-color: transparent;
+    color: @surface1;
 }
 
 #workspaces button.active {
     color: @mauve;
 }
 
+#workspaces button:hover {
+    background: inherit;
+    color: @green;
+}
+
+#workspaces button.focused {
+    background-color: @lavender;
+}
+
 #workspaces button.urgent {
     background-color: #eb4d4b;
 }
 
-#pulseaudio,
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#wireplumber,
-#tray,
-#network,
-#mode,
-#scratchpad {
-  margin-top: 2px;
-  margin-bottom: 2px;
-  margin-left: 4px;
-  margin-right: 4px;
-  padding-left: 4px;
-  padding-right: 4px;
+#mode {
+    background-color: #64727d;
 }
 
 #custom-archicon {
     font-size: 24px;
     color: #89B4FA;
-    background: #161320;
+    padding-right: 5px;
+}
+
+#custom-vpn {
+    color: @lavender;
     padding-left: 5px;
     padding-right: 5px;
 }
 
-#clock {
-    color: @maroon;
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#battery,
+#mode,
+#tray,
+#scratchpad {
+    margin-left: 4px;
+    margin-right: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
-#clock.date {
-    color: @mauve;
+#custom-power {
+    font-size: 20px;
+    color: #7cb342;
+}
+
+#clock {
+    padding: 0 10px;
+    color: @text;
+    border: 5px;
 }
 
 #idle_inhibitor {
     font-size: 24px;
-    margin-right: 12px;
+    margin-right: 6px;
     color: #7cb342;
-}
-
-#idle_inhibitor.activated {
-    font-size: 24px;
-    color: @red;
 }
 
 #pulseaudio {
@@ -105,7 +112,7 @@ button:hover {
 }
 
 #cpu {
-    color: @green;
+    color: @rosewater;
 }
 
 #memory {
@@ -120,27 +127,44 @@ button:hover {
     color: @peach;
 }
 
-#backlight {
-    color: @sky;
-}
-
 #battery {
     color: @green;
 }
 
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left>widget:first-child>#workspaces {
-    margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right>widget:last-child>#workspaces {
-    margin-right: 0;
-}
-
-#custom-vpn {
-    color: @lavender;
+.modules-right,
+.modules-left,
+.modules-center {
+    background-color: @base;
     border-radius: 15px;
-    padding-left: 6px;
-    padding-right: 6px;
+    padding: 0 10px;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: @sapphire;
+}
+
+@keyframes blink {
+    to {
+        color: #000000;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#pulseaudio.muted {
+    color: @text;
 }
