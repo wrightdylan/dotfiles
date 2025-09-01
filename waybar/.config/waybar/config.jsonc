@@ -13,6 +13,7 @@
         "idle_inhibitor",
         "pulseaudio",
         "network",
+        "bluetooth",
         "cpu",
         "memory",
         "disk",
@@ -127,6 +128,17 @@
         "interval": 1,
         "on-click": "nm-connection-editor"
     },
+    "bluetooth": {
+        "format": "󰂯",
+        "format-disabled": "󰂲",
+        "format-off": "󰂲",
+        "format-connected": "",
+        "format-connected-battery": "",
+        "tooltip-format": "Status: {status}\nConnections: {num_connections}\nDevices:\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battry": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        "on-click": "overskride"
+    },
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "format-bluetooth": "{volume}% {icon} {format_source}",
@@ -149,7 +161,7 @@
         "on-click": "pavucontrol"
     },
     "custom/power": {
-        "format" : "⏻ ",
+        "format" : "⏻",
         "tooltip": false,
         "menu": "on-click",
         "menu-file": "$HOME/.config/waybar/power_menu.xml",

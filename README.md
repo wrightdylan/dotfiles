@@ -28,6 +28,7 @@
         - hyprlock
         - hyprpaper
         - hyprpolkitagent
+    - Overskride
     - pipewire
     - polkit
     - Waybar

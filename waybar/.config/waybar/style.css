@@ -72,6 +72,7 @@ button:hover {
 
 #pulseaudio,
 #network,
+#bluetooth,
 #cpu,
 #memory,
 #disk,
@@ -109,6 +110,11 @@ button:hover {
 
 #network {
     color: @yellow;
+}
+
+#bluetooth {
+    font-size: 24px;
+    color: #0082fc;
 }
 
 #cpu {
