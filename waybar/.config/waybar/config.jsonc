@@ -101,28 +101,26 @@
             "warning": 30,
             "critical": 15
         },
+        "events": {
+            "on-discharging-warning": "notify-send -u normal 'Low Battery'",
+            "on-discharging-critical": "notify-send -u normal 'Very Low Battery'",
+        }, 
         "format": "{icon} {capacity}%",
         "format-full": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
+        "format-charging": "󱐋{icon} {capacity}%",
+        "format-plugged": "󰚥 {capacity}%",
         "format-alt": "{time} {icon}",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         "interval": 5
     },
     "network": {
         "format": "{ifname}",
         "format-wifi": " {signalStrength}%",
-        "format-ethernet": "",
+        "format-ethernet": "󰈀",
         "format-disconnected": "Not connected",
         "tooltip-format": " {ifname} via {gwaddri}",
         "tooltip-format-wifi": " {essid} ({signalStrength}%)",
-        "tooltip-format-ethernet": " {ifname} ({ipaddr}/{cidr})",
+        "tooltip-format-ethernet": "󰈀 {ifname} ({ipaddr}/{cidr})",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50,
         "interval": 1,
@@ -141,7 +139,7 @@
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{icon} {format_source} {volume}%",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": "",
         "format-icons": {
