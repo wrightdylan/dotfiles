@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Set the environment variable for KDE applications
 export XDG_MENU_PREFIX=arch-
