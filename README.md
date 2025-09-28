@@ -33,7 +33,7 @@
 - Shell -- [Zsh](https://www.zsh.org) using [Oh My Zsh](https://ohmyz.sh/) and [Starship](https://starship.rs/)
 - Terminal -- [Kitty](https://wiki.archlinux.org/title/Kitty)
 - Fonts -- [Nerd Fonts](https://www.nerdfonts.com/)
-- Notification Daemon - [Dunst](https://wiki.archlinux.org/title/Dunst)
+- Notification Daemon -- [Dunst](https://wiki.archlinux.org/title/Dunst)
 - Application Launcher -- [Walker](https://aur.archlinux.org/packages/walker)
 - File Manager -- [Dolphin](https://wiki.archlinux.org/title/Dolphin)
 - Image Viewer -- [Oculante](https://archlinux.org/packages/extra/x86_64/oculante/)
